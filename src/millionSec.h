@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef _HELLOCASCADESAPP_H_
-#define _HELLOCASCADESAPP_H_
+#ifndef _MILLIONSEC_H_
+#define _MILLIONSEC_H_
 
 #include <bb/cascades/Application>
 
@@ -27,13 +27,13 @@
  * text.
  *
  */
-class HelloCascadesApp: public QObject
+class millionSec: public QObject
 {
 Q_OBJECT
 
 public:
     // This is our constructor that sets up the recipe.
-    HelloCascadesApp();
+    millionSec();
 };
 
-#endif // ifndef _HELLOCASCADESAPP_H_
+#endif // ifndef _MILLIONSEC_H_

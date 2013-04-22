@@ -12,27 +12,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include "hellocascadesapp.h"
-
+#include "millionSec.h"
+#include <bb/cascades/NavigationPane>
+#include <bb/cascades/DropDown>
 #include <bb/cascades/QmlDocument>
 #include <bb/cascades/Page>
 
 using namespace bb::cascades;
 
-HelloCascadesApp::HelloCascadesApp()
+millionSec::millionSec()
 {
     // Obtain a QMLDocument and load it into the qml variable, using build patterns.
-    QmlDocument *qml = QmlDocument::create("asset:///hellocascades.qml");
+    QmlDocument *qml = QmlDocument::create("asset:///home.qml");
+    qml->setParent(this);
+    NavigationPane *nav = qml->createRootObject<NavigationPane>();
 
     // If the QML document is valid, we process it.
     if (!qml->hasErrors()) {
 
         // Create the application Page from QMLDocument.
-        Page *appPage = qml->createRootObject<Page>();
+        //Page *appPage = qml->createRootObject<Page>();
 
-        if (appPage) {
+        if (nav) {
             // Set the main scene for the application to the Page.
-            Application::instance()->setScene(appPage);
+            Application::instance()->setScene(nav);
+            DropDown *day = DropDown::create();
+            int date = day->selectedIndex();
+
+            DropDown *month = DropDown::create();
+            month->add(Option::create().text("Jan"));
+            month->add(Option::create().text("Feb"));
         }
     }
 }
+//
+//void millionSec::calculate( ){
+//
+//}

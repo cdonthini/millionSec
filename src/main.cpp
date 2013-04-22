@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include "hellocascadesapp.h"
+#include "millionSec.h"
 
 #include <QLocale>
 #include <QTranslator>
@@ -28,13 +28,13 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     // Set up the translator.
     QTranslator translator;
     QString locale_string = QLocale().name();
-    QString filename = QString("hellocascades_%1").arg(locale_string);
+    QString filename = QString("millionSec_%1").arg(locale_string);
     if (translator.load(filename, "app/native/qm")) {
         app.installTranslator(&translator);
     }
 
     // Initialize our application.
-    HelloCascadesApp mainApp;
+    millionSec mainApp;
 
     // We complete the transaction started in the main application constructor and start the
     // client event loop here. When loop is exited the Application deletes the scene which
