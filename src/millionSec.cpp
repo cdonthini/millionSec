@@ -39,9 +39,8 @@ millionSec::millionSec()
             DropDown *day = DropDown::create();
             int date = day->selectedIndex();
 
-            DropDown *month = DropDown::create();
-            month->add(Option::create().text("Jan"));
-            month->add(Option::create().text("Feb"));
+            printf("%d\n",date);
+
         }
     }
 }

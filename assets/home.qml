@@ -10,6 +10,7 @@ NavigationPane {
             title: "Home"
         }
         Container {
+                        
             layout: StackLayout {
             }
             background: backgroundPaint.imagePaint
@@ -61,6 +62,9 @@ NavigationPane {
                         value: "8"
                     }
                     
+                    onSelectedIndexChanged: {
+                     console.log("selected index: " + selectedIndex);   
+                    }
                 }
                 Container {
                     horizontalAlignment: HorizontalAlignment.Center
@@ -91,6 +95,7 @@ NavigationPane {
                     horizontalAlignment: HorizontalAlignment.Center
                     onClicked: {
                         var resultpage = contentPageDefinition.createObject();
+                        resultpage.date = selectedIndex
                         nav.push(resultpage);
                     }
                 }
