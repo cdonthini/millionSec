@@ -34,6 +34,15 @@ Q_OBJECT
 public:
     // This is our constructor that sets up the recipe.
     millionSec();
+    ~millionSec();
+    int calculate(int,int,int);
+
+private:
+    /**
+     * Function used to create and set the SceneCover of the application,
+     * the cover is shown when the app is running in minimized mode.
+     */
+    void addApplicationCover();
 };
 
 #endif // ifndef _MILLIONSEC_H_

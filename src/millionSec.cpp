@@ -16,7 +16,12 @@
 #include <bb/cascades/NavigationPane>
 #include <bb/cascades/DropDown>
 #include <bb/cascades/QmlDocument>
+#include <bb/cascades/SceneCover>
+#include <bb/cascades/AbstractCover>
+#include <bb/cascades/Container>
+#include <bb/system/SystemToast>
 #include <bb/cascades/Page>
+#include <QDateTime>
 
 using namespace bb::cascades;
 
@@ -36,13 +41,36 @@ millionSec::millionSec()
         if (nav) {
             // Set the main scene for the application to the Page.
             Application::instance()->setScene(nav);
-            DropDown *day = DropDown::create();
-            int date = day->selectedIndex();
-
-            printf("%d\n",date);
-
         }
     }
+}
+
+void millionSec::addApplicationCover() {
+    // A small UI consisting of just an ImageView in a Container is set up
+    // and used as the cover for the application when running in minimized mode.
+    QmlDocument *qmlCover = QmlDocument::create("asset:///minimized.qml").parent(this);
+
+    if (!qmlCover->hasErrors()) {
+        // Create the QML Container from using the QMLDocument.
+        Container *coverContainer = qmlCover->createRootObject<Container>();
+
+        // Create a SceneCover and set the application cover
+        SceneCover *sceneCover = SceneCover::create().content(coverContainer);
+        Application::instance()->setCover(sceneCover);
+    }
+}
+
+int millionSec::calculate( int date, int month, int year , ) {
+
+	QDateTime qdt;
+	qdt = qdt.currentDateTime();
+	QString timeinStr = qdt.toString();
+	int ans = date+month+year;
+	return ans;
+
+}
+millionSec::~millionSec(){
+
 }
 //
 //void millionSec::calculate( ){
