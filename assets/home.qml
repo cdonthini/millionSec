@@ -183,11 +183,17 @@ NavigationPane {
                     onClicked: {
                         var resultpage = contentPageDefinition.createObject();
                         resultpage.date = day.selectedValue;
+                        
                         resultpage.month = month.selectedValue;
                         resultpage.year = year.selectedValue;
-                        
+                        //home.calculate();
                         nav.push(resultpage);
                     }
+                }
+                Label {
+                    id: homelabel
+                    objectName: "homeLabel"
+                    
                 }
             }
         }
@@ -204,4 +210,6 @@ NavigationPane {
         // Transition is done destroy the Page to free up memory.
         page.destroy();
     }
+    
+    
 }

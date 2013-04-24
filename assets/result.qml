@@ -12,13 +12,26 @@ Page {
         title: "Result Page"
         visibility: ChromeVisibility.Visible
     }
-    Label {
-        horizontalAlignment: HorizontalAlignment.Center
-        verticalAlignment: VerticalAlignment.Center
-        textStyle.fontSize: FontSize.PointValue
-        textStyle.fontSizeValue: 20
-        id: answer
-        text: date + month + year + " "
-        textStyle.color: Color.DarkGreen
+    objectName: "resultPage"
+    Container {
+        Label {
+            bottomMargin: 50
+            horizontalAlignment: HorizontalAlignment.Right
+            id: answer
+            text: date + month + year + " "
+            textStyle.color: Color.white
+            textStyle.base: textStyleBoldTitle.style
+        }
+        
+        Label {
+           onCreationCompleted: _millionSec.calculate(date)
+            bottomMargin: 50
+            horizontalAlignment: HorizontalAlignment.Right
+            id: str
+            textStyle.color: Color.white
+            textStyle.base: textStyleBoldTitle.style
+            objectName: "strLabel"
+        }
     }
+    
 }

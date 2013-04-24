@@ -17,7 +17,8 @@
 #define _MILLIONSEC_H_
 
 #include <bb/cascades/Application>
-
+#include <bb/cascades/Label>
+#include <bb/cascades/Page>
 /**
  * HelloWorld Description:
  *
@@ -35,7 +36,8 @@ public:
     // This is our constructor that sets up the recipe.
     millionSec();
     ~millionSec();
-    int calculate(int,int,int);
+//    Q_INVOKABLE QString calculate(const int &date, const int &month, const int &year);
+    Q_INVOKABLE void calculate( int date);
 
 private:
     /**
@@ -43,6 +45,8 @@ private:
      * the cover is shown when the app is running in minimized mode.
      */
     void addApplicationCover();
+    bb::cascades::Page *myResultPage;
+    bb::cascades::Label *myLabel;
 };
 
 #endif // ifndef _MILLIONSEC_H_
