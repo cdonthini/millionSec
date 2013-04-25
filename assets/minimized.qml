@@ -9,31 +9,31 @@ Container {
         layout: DockLayout {
         }
         background: Color.Black
-        ImageView {
-            imageSource: "asset:///images/minimized.png"
-            scalingMethod: ScalingMethod.AspectFit
-        }
-
+        
+        
         // A title is put on a dark background, it is pixelaligned in order
         // to get it to match the checkerd pattern in the background image.
         Container {
-            bottomPadding: 500
-            horizontalAlignment: HorizontalAlignment.Center
-            verticalAlignment: VerticalAlignment.Bottom
-
+            
+            bottomPadding: 31
+                     
             Container {
-                preferredWidth: 260
-                preferredHeight: 84
-                background: Color.create("#121212")
+                preferredWidth: 320
+                preferredHeight: 250
+                background: Color.create("#11111111")
                 layout: DockLayout {
                 }
-                Label {
-                    horizontalAlignment: HorizontalAlignment.Center
-                    verticalAlignment: VerticalAlignment.Center
-                    text: "DOB"
-                    textStyle.color: Color.create("#ebebeb")
+                Label {                    
+                    text: {
+                        "  TIME\n" + "    ON\n" + "EARTH"
+                    }
+                    textStyle.color: Color.Green
                     textStyle.fontSize: FontSize.PointValue
-                    textStyle.fontSizeValue: 20
+                    textStyle.fontSizeValue: 10
+                    multiline: true
+                    textStyle.fontStyle: FontStyle.Default
+                    translationX: 90.0
+                    translationY: 20.0
                 }
             }
         }

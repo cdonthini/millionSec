@@ -30,26 +30,23 @@ millionSec::millionSec()
 {
     // Obtain a QMLDocument and load it into the qml variable, using build patterns.
     QmlDocument *qml = QmlDocument::create("asset:///home.qml");
-    QmlDocument *qmlResult = QmlDocument::create("asset:///result.qml").parent(qml);
     qml->setParent(this);
     qml->setContextProperty("home",this);
 
 
     NavigationPane *nav = qml->createRootObject<NavigationPane>();
-    Page *result = qmlResult->createRootObject<Page>();
     // If the QML document is valid, we process it.
     if (!qml->hasErrors()) {
 
         // Create the application Page from QMLDocument.
         //Page *appPage = qml->createRootObject<Page>();
-    	myResultPage = result->findChild<Page*>("resultPage");
 
-    	myLabel = myResultPage->findChild<Label*>("strLabel");
 
         if (nav) {
             // Set the main scene for the application to the Page.
             Application::instance()->setScene(nav);
             //calculate();
+            addApplicationCover();
         }
     }
 }
@@ -69,18 +66,6 @@ void millionSec::addApplicationCover() {
     }
 }
 
-void millionSec::calculate( int date ) {
-//QString millionSec::calculate( const int &date, const int &month, const int &year ) {
-	QSettings settings;
-	//settings.
-	QDateTime qdt;
-	qdt = qdt.currentDateTime();
-	QString timeinStr = qdt.toString();
-	timeinStr = date + " ";
-	myLabel->setText("Hello");
-
-
-}
 millionSec::~millionSec(){
 
 }

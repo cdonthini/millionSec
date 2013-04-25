@@ -14,24 +14,44 @@ Page {
     }
     objectName: "resultPage"
     Container {
-        Label {
-            bottomMargin: 50
-            horizontalAlignment: HorizontalAlignment.Right
-            id: answer
-            text: date + month + year + " "
-            textStyle.color: Color.white
-            textStyle.base: textStyleBoldTitle.style
+        animations: [
+            SequentialAnimation {
+            }
+        ]
+        layout: DockLayout {
         }
-        
         Label {
-           onCreationCompleted: _millionSec.calculate(date)
+           
             bottomMargin: 50
-            horizontalAlignment: HorizontalAlignment.Right
+            preferredWidth: 280
+                            preferredHeight: 400
+                            
+            horizontalAlignment: HorizontalAlignment.Center
             id: str
-            textStyle.color: Color.white
             textStyle.base: textStyleBoldTitle.style
             objectName: "strLabel"
+            text: {
+                 var dmy = new Date();
+                 var days = ( ( 30 - date ) + dmy.getDate() ) ;
+                 var months = (12 - month) + dmy.getMonth() + parseInt(days/30);
+                 var years = dmy.getFullYear() - 1 - year + parseInt(months/12);
+                 "\n\n"+ years+ " Years \n" + 
+                 months%12 + " Months \n" 
+                  + days%30 + " Days    \n  " 
+                  +" old" 
+            }
+            textStyle.color: Color.DarkCyan
+            textStyle.fontWeight: FontWeight.Bold
+            textStyle.fontSize: FontSize.Large
+            verticalAlignment: VerticalAlignment.Center
+            textStyle.textAlign: TextAlign.Center
+            topPadding: 11.0
+            bottomPadding: 13.0
+            multiline: true
         }
     }
+//    attachedObjects: {
+//        str. text( millionSec.calculate(date));
+//        } 
     
 }

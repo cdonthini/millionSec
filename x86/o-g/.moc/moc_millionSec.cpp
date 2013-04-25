@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'millionSec.h'
 **
-** Created: Wed Apr 24 18:27:06 2013
+** Created: Thu Apr 25 17:41:27 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,33 +23,26 @@ static const uint qt_meta_data_millionSec[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       0,    0, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
- // methods: signature, parameters, type, tag, flags
-      17,   12,   11,   11, 0x02,
-
        0        // eod
 };
 
 static const char qt_meta_stringdata_millionSec[] = {
-    "millionSec\0\0date\0calculate(int)\0"
+    "millionSec\0"
 };
 
 void millionSec::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    if (_c == QMetaObject::InvokeMetaMethod) {
-        Q_ASSERT(staticMetaObject.cast(_o));
-        millionSec *_t = static_cast<millionSec *>(_o);
-        switch (_id) {
-        case 0: _t->calculate((*reinterpret_cast< int(*)>(_a[1]))); break;
-        default: ;
-        }
-    }
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
 }
 
 const QMetaObjectExtraData millionSec::staticMetaObjectExtraData = {
@@ -83,11 +76,6 @@ int millionSec::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = QObject::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
-    if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
-            qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
-    }
     return _id;
 }
 QT_END_MOC_NAMESPACE

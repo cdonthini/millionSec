@@ -37,7 +37,7 @@ public:
     millionSec();
     ~millionSec();
 //    Q_INVOKABLE QString calculate(const int &date, const int &month, const int &year);
-    Q_INVOKABLE void calculate( int date);
+
 
 private:
     /**
